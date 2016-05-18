@@ -69,7 +69,9 @@ We need to keep a database of:
 
 ## Technical checklist
 
-* [] Setup Travis CI and put a badge.
-* [] Deploy to Heroku.
-* [] Setup code coverage using Coveralls.io and put a badge.
-* [] Setup go-report and put a badge.
+- [x] Setup project.
+- [] Setup unit and acceptance tests.
+- [x] Setup Travis CI and put a badge.
+- [x] Deploy to Heroku.
+- [] Setup dependency management using david-dm and put a badge.
+- [] Setup code coverage using Coveralls.io and put a badge.
