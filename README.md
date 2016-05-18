@@ -1,4 +1,4 @@
-# product-service
+# product-service [![Build Status](https://travis-ci.org/devacto/product-service.svg?branch=master)](https://travis-ci.org/devacto/product-service)
 
 A sample microservice written in Golang developed using `go-kit`.
 
