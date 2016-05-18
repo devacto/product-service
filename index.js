@@ -3,6 +3,10 @@ var server = require('./app/core/server'),
 
 process.on('uncaughtException', uncaughtProcessExceptionHandler);
 
-server.listen(8080, function() {
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 8080;
+
+server.listen(port, function() {
   console.log('%s listening at %s\n', server.name, server.url);
 });
