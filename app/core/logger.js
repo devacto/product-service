@@ -1,5 +1,5 @@
 var Bunyan = require('bunyan'),
-    streams = [{ path: '../../log/out.log' }];
+    streams = [];
 
 if(process.env.NODE_ENV !== 'test') {
   streams.push({ stream: process.stdout });
