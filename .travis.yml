@@ -3,7 +3,7 @@ node_js:
 - 6.2.0
 script: "./bin/test.sh"
 after_script:
-  - codeclimate-test-reporter < coverage/lcov.info
+  - codeclimate-test-reporter < ./coverage/lcov.info
 deploy:
   skip_cleanup: true
   provider: heroku
