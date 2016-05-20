@@ -19,7 +19,7 @@ module.exports.show = function(req, res, next) {
   var id = req.params.id;
   cartRepository.find(id, function(cart) {
     if(!cart) {
-      res.send(404, { message: id + ' not found' });
+      res.send(404, { message: 'cart ' + id + ' is not found' });
       return next();
     }
     res.send(200, formatResponse([cart]));

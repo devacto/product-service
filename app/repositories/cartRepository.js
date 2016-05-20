@@ -33,7 +33,7 @@ var Cart = require('../models/cart'),
     module.exports.find = function(id, done) {
       process.nextTick(function() {
         for(var i = 0; i < cartDataStore.length; i++) {
-          if(cartDataStore[i].id === id) {
+          if(String(cartDataStore[i].id) === String(id)) {
             done(new Cart(
               {
                 id: cartDataStore[i].id,
