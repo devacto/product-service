@@ -33,6 +33,7 @@
   "scripts": {
     "start": "./node_modules/.bin/forever --minUptime 5000 --spinSleepTime 1000 -o ./log/out.log -e ./log/err.log start index.js",
     "stop": "./node_modules/.bin/forever stop index.js",
-    "migrate-dev": "./node_modules/mongodb-migrations/bin/mm migrate --config=config/dev.json"
+    "migrate-dev": "./node_modules/mongodb-migrations/bin/mm migrate --config=config/dev.json",
+    "migrate-prod": "./node_modules/mongodb-migrations/bin/mm migrate --config=config/prod.json"
   }
 }

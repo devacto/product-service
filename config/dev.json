@@ -1,5 +1,4 @@
 {
-	"dbPath": "mongodb://localhost:27017/test",
   "host": "localhost",
   "port": 27017,
   "db": "test",

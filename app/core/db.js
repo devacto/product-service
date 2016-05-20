@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
-var environment = process.env.ENVIRONMENT || 'dev';
-var config = require('../../config/' + environment);
+var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/test';
 
-mongoose.connect(config.dbPath);
+mongoose.connect(mongoUri);
 
 module.exports.mongoose = mongoose;
