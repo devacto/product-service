@@ -45,4 +45,5 @@ var healthController = require('../controllers/healthController'),
     cartController = require('../controllers/cartController');
 
 server.get('/health', healthController.get);
+server.get({ name: 'cart', path: '/cart/:id' }, cartController.show);
 server.get({ name: 'carts', path: '/cart' }, cartController.list);

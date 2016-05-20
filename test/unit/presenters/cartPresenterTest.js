@@ -20,8 +20,15 @@ describe('CartPresenter', function() {
     });
 
     it('then presents the discount code', function(){
-      json.should.have.property('links');
+      json.should.have.property('discountCode');
+    });
 
+    it('then presents the products', function(){
+      json.should.have.property('products');
+    });
+
+    it('then presents link to itself', function(){
+      json.should.have.property('links');
     });
   });
 });

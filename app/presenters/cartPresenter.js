@@ -2,9 +2,10 @@ var routeHelper = require('../core/routeHelper');
 
 module.exports.asJson = function(cart) {
   return {
-    cart: cart,
+    products: cart.products,
+    discountCode: cart.discountCode,
     links: [{
-        self: routeHelper.getPath('cart', { name: cart.id })
+        self: routeHelper.getPath('cart', { id: cart.id })
     }]
   };
 };

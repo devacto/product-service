@@ -1,7 +1,7 @@
 var Cart = require('../models/cart'),
     cartDataStore = [
       {
-        id: 1463699485,
+        id: 1,
         products: [{
           name: 'Shirt',
           price: 10,
@@ -15,7 +15,7 @@ var Cart = require('../models/cart'),
         discountCode: 'VALIDCODE'
       },
       {
-        id: 1463699484,
+        id: 2,
         products: [{
           name: 'Dress',
           price: 20,

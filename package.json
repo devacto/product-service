@@ -10,6 +10,7 @@
     "url": "git@github.com:devacto/product-service.git"
   },
   "devDependencies": {
+    "codeclimate-test-reporter": "^0.3.1",
     "forever": "^0.15.1",
     "istanbul": "^0.4.3",
     "jscs": "^3.0.3",

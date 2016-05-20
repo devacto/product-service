@@ -12,7 +12,7 @@ A cart is identified by `timestamp`. Valid coupon is hard-coded for now.
 
 ## Endpoints
 
-* `GET    /cart?12569537329` to get items and total in a shopping cart.
+* `GET    /cart/1` to get items and total in a shopping cart.
 * `PUT    /cart` to create / update shopping cart.
 * `PATCH  /cart` to modify some items in a shopping cart.
 * `DELETE /cart` to delete cart.
@@ -70,8 +70,12 @@ We need to keep a database of:
 ## Technical checklist
 
 - [x] Setup project.
-- [ ] Setup unit and acceptance tests.
+- [x] Add controller unit test.
+- [x] Add presenter unit test.
+- [x] Add `/cart` acceptance test.
+- [x] Add `/cart/1` 200 OK acceptance test.
+- [x] Add `/cart/99` 404 acceptance test.
 - [x] Setup Travis CI and put a badge.
 - [x] Deploy to Heroku.
-- [x] Setup dependency management using david-dm and put a badge.
-- [ ] Setup code coverage using Coveralls.io and put a badge.
+- [x] Setup dependency badge.
+- [ ] Setup code coverage badge.
