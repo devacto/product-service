@@ -73,5 +73,5 @@ We need to keep a database of:
 - [ ] Setup unit and acceptance tests.
 - [x] Setup Travis CI and put a badge.
 - [x] Deploy to Heroku.
-- [ ] Setup dependency management using david-dm and put a badge.
+- [x] Setup dependency management using david-dm and put a badge.
 - [ ] Setup code coverage using Coveralls.io and put a badge.

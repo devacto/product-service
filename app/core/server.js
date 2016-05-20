@@ -27,7 +27,7 @@ server.pre(function(req, res, next) {
   next();
 });
 
-server.on('after', function(req, res, route) {
+server.on('after', function(req, res) {
   req.log.info({
     time: new Date().getTime(),
     id: req.id(),
