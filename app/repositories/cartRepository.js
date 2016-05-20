@@ -1,62 +1,12 @@
-var Cart = require('../models/cart'),
-    cartDataStore = [
-      {
-        id: 1,
-        products: [{
-          name: 'Shirt',
-          price: 10,
-          qty: 5
-        },
-        {
-          name: 'Pants',
-          price: 10,
-          qty: 2
-        }],
-        discountCode: 'VALIDCODE'
-      },
-      {
-        id: 2,
-        products: [{
-          name: 'Dress',
-          price: 20,
-          qty: 2
-        },
-        {
-          name: 'Skirt',
-          price: 30,
-          qty: 1
-        }],
-        discountCode: 'INVALIDCODE'
-      }
-    ];
-
-    module.exports.find = function(id, done) {
-      process.nextTick(function() {
-        for(var i = 0; i < cartDataStore.length; i++) {
-          if(String(cartDataStore[i].id) === String(id)) {
-            done(new Cart(
-              {
-                id: cartDataStore[i].id,
-                products: cartDataStore[i].products,
-                discountCode: cartDataStore[i].discountCode
-              }));
-            return;
-          }
-        }
-        done();
-      });
+var mongoose = require('../core/db').mongoose,
+    cartSchema = {
+      id: { type: Number, required: true },
+      products: [{
+        name: 'string',
+        price: 'number',
+        qty: 'number'
+      }],
+      discountCode: String
     };
 
-    module.exports.all = function(done) {
-      process.nextTick(function() {
-        var carts;
-        carts = cartDataStore.map(function(dataStoreCart) {
-          return new Cart({
-            id: dataStoreCart.id,
-            products: dataStoreCart.products,
-            discountCode: dataStoreCart.discountCode
-          });
-        });
-        done(carts);
-      });
-    };
+module.exports = mongoose.model('carts', mongoose.Schema(cartSchema));

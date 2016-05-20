@@ -1,9 +1,11 @@
 var sinon = require('sinon');
 
 var rewire = require('rewire'),
-cartController = rewire('../../../app/controllers/cartController'),
-repository = cartController.__get__('cartRepository'),
-presenter = cartController.__get__('cartPresenter');
+    cartController = rewire('../../../app/controllers/cartController'),
+    repository = cartController.__get__('cartRepository'),
+    presenter = cartController.__get__('cartPresenter'),
+    find = sinon.stub(repository, 'find'),
+    findOne = sinon.stub(repository, 'findOne');
 
 describe('cart controller', function() {
   var body,
@@ -25,16 +27,15 @@ describe('cart controller', function() {
   });
 
   describe('when getting all carts', function() {
-    var carts = [ 'Cart 1', 'Cart 2' ];
-    var all = sinon.stub(repository, 'all');
+    var carts = [ { id: 1, name: 'Cart 1' }, { id: 2, name: 'Cart 2' } ];
 
     after(function() {
-      all.restore();
+      find.restore();
     });
 
     describe('and there are carts', function() {
       before(function(done) {
-        all.yields(carts);
+        find.yields(null, carts);
         cartController.list(null, mockResponse, done);
       });
 
@@ -55,7 +56,7 @@ describe('cart controller', function() {
 
     describe('and there is no cart', function() {
       before(function(done) {
-        all.yields([]);
+        find.yields(null, []);
         cartController.list(null, mockResponse, done);
       });
 
@@ -76,16 +77,15 @@ describe('cart controller', function() {
   });
 
   describe('when getting a cart', function() {
-    var req = { params: { id: 1 } },
-        find = sinon.stub(repository, 'find');
+    var req = { params: { id: 1 } };
 
     after(function() {
-      find.restore();
+      findOne.restore();
     });
 
     describe('and the cart exists', function() {
       before(function(done) {
-        find.withArgs(1).yields('Cart that exists');
+        findOne.yields(null, 'Cart that exists');
         cartController.show(req, mockResponse, done);
       });
 
@@ -106,7 +106,7 @@ describe('cart controller', function() {
 
     describe('and it does not exist', function() {
       before(function(done) {
-        find.withArgs(1).yields(null);
+        findOne.yields(null, null);
         cartController.show(req, mockResponse, done);
       });
 

@@ -25,11 +25,14 @@
   "dependencies": {
     "bunyan": "^1.8.1",
     "cli-table": "^0.3.1",
+    "lodash": "^4.12.0",
     "mongodb-migrations": "^0.5.1",
+    "mongoose": "^4.4.17",
     "restify": "^4.0.4"
   },
   "scripts": {
     "start": "./node_modules/.bin/forever --minUptime 5000 --spinSleepTime 1000 -o ./log/out.log -e ./log/err.log start index.js",
-    "stop": "./node_modules/.bin/forever stop index.js"
+    "stop": "./node_modules/.bin/forever stop index.js",
+    "migrate-dev": "./node_modules/mongodb-migrations/bin/mm migrate --config=config/dev.json"
   }
 }
