@@ -31,8 +31,8 @@ server.on('after', function(req, res, route) {
   req.log.info({
     time: new Date().getTime(),
     id: req.id(),
-    method: route.spec.method,
-    path: route.spec.path,
+    method: req.method,
+    path: req.getPath(),
     statusCode: res.statusCode,
     length: res.headers()['content-length'],
     state: "finished"
@@ -41,6 +41,8 @@ server.on('after', function(req, res, route) {
 
 module.exports = server;
 
-var healthController = require('../controllers/healthController');
+var healthController = require('../controllers/healthController'),
+    cartController = require('../controllers/cartController');
 
 server.get('/health', healthController.get);
+server.get({ name: 'carts', path: '/cart' }, cartController.list);

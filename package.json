@@ -24,6 +24,7 @@
   "dependencies": {
     "bunyan": "^1.8.1",
     "cli-table": "^0.3.1",
+    "mongodb-migrations": "^0.5.1",
     "restify": "^4.0.4"
   },
   "scripts": {
