@@ -1,7 +1,9 @@
 language: node_js
 node_js:
 - 6.2.0
-script: "./bin/test-unit.sh"
+script: "./bin/test.sh"
+after_script:
+  - codeclimate-test-reporter < coverage/lcov.info
 deploy:
   skip_cleanup: true
   provider: heroku
@@ -10,3 +12,6 @@ deploy:
   app: ss-cart-api
   on:
     repo: devacto/product-service
+addons:
+  code_climate:
+    repo_token: 6a3f82b0fe46106fc944bfdc65b49e14858885ed087f39fca4961748bbc6b5b2
