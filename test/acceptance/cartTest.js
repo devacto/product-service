@@ -10,8 +10,8 @@ describe('cart operations', function() {
   describe('when getting all carts', function () {
     var expectedBody = {
       "carts": [
-        { "products":[productOne, productTwo], "discountCode": "VALIDCODE", "links": [ {"self":"/cart/1"} ] },
-        { "products":[productThree, productFour], "discountCode": "INVALIDCODE", "links": [ {"self":"/cart/2"} ] }
+        { "products":[productOne, productTwo], "discountCode": "VALIDCODE", "total": 65, "links": [ {"self":"/cart/1"} ] },
+        { "products":[productThree, productFour], "discountCode": "INVALIDCODE", "total": 70, "links": [ {"self":"/cart/2"} ] }
       ],
       "length": 2
     };
@@ -26,7 +26,7 @@ describe('cart operations', function() {
   describe('when getting one particular cart', function() {
     var expectedBody = {
       "carts": [
-        { "products":[productOne, productTwo], "discountCode": "VALIDCODE", "links": [ {"self":"/cart/1"} ] }
+        { "products":[productOne, productTwo], "discountCode": "VALIDCODE", "total": 65, "links": [ {"self":"/cart/1"} ] }
       ],
       "length": 1
     };
