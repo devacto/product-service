@@ -18,7 +18,7 @@ describe('cart operations', function() {
       "length": 2
     };
 
-    it('then returns 200 and all the listings', function(done) {
+    it('then returns 200 and all the carts', function(done) {
       request(server)
         .get('/cart')
         .expect(200, expected_body, done);

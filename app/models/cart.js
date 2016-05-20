@@ -1,7 +1,7 @@
-var listing = function(args) {
+var cart = function(args) {
   this.id = args.id;
   this.products = args.products;
   this.discountCode = args.discountCode;
 };
 
-module.exports = listing;
+module.exports = cart;
