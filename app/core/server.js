@@ -22,7 +22,7 @@ server.pre(function(req, res, next) {
     id: req.id(),
     method: req.method,
     path: req.path(),
-    state: "started"
+    state: 'started'
   });
   next();
 });
@@ -35,7 +35,7 @@ server.on('after', function(req, res) {
     path: req.getPath(),
     statusCode: res.statusCode,
     length: res.headers()['content-length'],
-    state: "finished"
+    state: 'finished'
   });
 });
 
