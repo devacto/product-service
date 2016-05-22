@@ -8,7 +8,7 @@ module.exports.asJson = function(cart) {
     total += product.price * product.qty;
   });
 
-  if(String(cart.discountCode) === "VALIDCODE") {
+  if(String(cart.discountCode) === 'VALIDCODE') {
     total -= 5;
   }
 

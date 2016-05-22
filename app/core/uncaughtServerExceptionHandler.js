@@ -8,6 +8,6 @@ module.exports = function uncaughtExceptionHandler(req, res, route, err) {
     statusCode: res.statusCode,
     length: res.headers()['content-length'],
     error: err.message,
-    state: "uncaught error"
+    state: 'uncaught error'
   }));
 };
