@@ -2,7 +2,7 @@ var sinon = require('sinon');
 
 var rewire = require('rewire'),
     cartController = rewire('../../../app/controllers/cartController'),
-    repository = cartController.__get__('cartRepository'),
+    repository = cartController.__get__('cart'),
     presenter = cartController.__get__('cartPresenter'),
     find = sinon.stub(repository, 'find'),
     findOne = sinon.stub(repository, 'findOne');
